@@ -34,10 +34,12 @@ html {
 	height: 100%;
 }
 
-body, p {
-	color: #f1f1f8; 
+h1, h2, h3, h4, h5 h6, body, p {
+	color: #2F343A; 
 	font: 400 0.875rem/1.375rem "Open Sans", sans-serif;
 }
+
+iframe{ justify-content: center;}
 
 .p-large {
 	color: #f1f1f8;
@@ -98,12 +100,12 @@ a {
 }
 
 a:hover {
-	color: #f1f1f8;
+	color: #FFA38F;
 	text-decoration: underline;
 }
 
 a.turquoise {
-	color: #00c9db;
+	color: #FFA38F;
 }
 
 a.white {
@@ -748,7 +750,12 @@ input[type='checkbox'] {
 /*    04. Header     */
 /*********************/
 .header {
-	background: linear-gradient(to bottom right, rgba(72, 72, 212, 0), rgba(241, 104, 104, 0)), url('../images/header-background.jpg') center center no-repeat;
+	background: linear-gradient(to bottom right, rgba(72, 72, 212, 0), rgba(241, 104, 104, 0)), url("https://cdn.glitch.com/59834b35-1469-482d-b53c-c1bd6dd74bdf%2Fbgggg.png?v=1585645628405") center center no-repeat;
+	background-size: cover;
+}
+
+#quiz {
+	background: linear-gradient(to bottom right, rgba(72, 72, 212, 0), rgba(241, 104, 104, 0)), url("https://cdn.glitch.com/59834b35-1469-482d-b53c-c1bd6dd74bdf%2Fbgggg.png?v=1585645628405") center center no-repeat;
 	background-size: cover;
 }
 
@@ -993,9 +1000,9 @@ input[type='checkbox'] {
 /*********************/
 .basic-1 {
 	padding-top: 6.375rem;
-	padding-bottom: 6.875rem;
-	background: url('../images/video-background.jpg') center center no-repeat;
-	background-size: cover; 
+	padding-bottom: 6.875rem; */
+/* 	background: linear-gradient(to bottom right, rgba(72, 72, 212, 0), rgba(241, 104, 104, 0)), url("https://cdn.glitch.com/59834b35-1469-482d-b53c-c1bd6dd74bdf%2Fbgggg.jpg?v=1585811660239") center center no-repeat;
+	background-size: cover; */
 }
 
 .basic-1 h2 {
@@ -1560,13 +1567,13 @@ a:hover.back-to-top {
 	
 	.navbar-custom .nav-item .nav-link:hover,
 	.navbar-custom .nav-item .nav-link.active {
-		color: #00c9db;
+		color: #2F343A;
 	}
 
 	.navbar-custom.top-nav-collapse {
         padding: 0.5rem 1.5rem 0.5rem 2rem;
 		box-shadow: 0 0.0625rem 0.375rem 0 rgba(0, 0, 0, 0.1);
-		background-color: #4633af;
+		background-color: #2F343A;
 	}
 
 	.navbar-custom.top-nav-collapse .navbar-brand.logo-text {
@@ -1579,7 +1586,7 @@ a:hover.back-to-top {
 	
 	.navbar-custom.top-nav-collapse .nav-item .nav-link:hover,
 	.navbar-custom.top-nav-collapse .nav-item .nav-link.active {
-		color: #00c9db;
+		color: #FFA38F;
 	}
 
 	.navbar-custom .dropdown-menu {
@@ -2088,3 +2095,49 @@ a:hover.back-to-top {
 	/* end of extra pages */
 }
 /* end of min-width width 1200px */
+
+
+.section-padding {
+  padding: 70px 10px;
+  margin-bottom: -4%;
+}
+
+.section-heading {
+  text-align: center;
+  width: 70%;
+  margin: 0 auto 60px;
+}
+
+.section-title {
+  font-size: 32px;
+  line-height: 38px;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+}
+
+.section-title span {
+  color: #4361B7;
+}
+
+.lead{
+  font-weight: lighter;
+}
+
+#signup{
+  background-color: #FFA38F; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+#signup: hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#subtitle {
+  font-weight: lighter;
+}

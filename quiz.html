@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase.js"></script>
+	  <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-firestore.js"></script>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="Branch++ connects developers from all over the world"
+    />
+    <meta name="author" content="Inovatik" />
+    <meta property="og:site_name" content="Branch++" />
+    <meta property="og:site" content="https://branchapp.glitch.me/" />
+    <meta property="og:title" content="Branch++" />
+    <meta
+      property="og:description"
+      content="Connecting developers from all over the world"
+    />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="article" />
+    <title>Branch++</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i"
+      rel="stylesheet"
+    />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/fontawesome-all.css" rel="stylesheet" />
+    <link href="css/swiper.css" rel="stylesheet" />
+    <link href="css/magnific-popup.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+        <link href="quiz.css" rel="stylesheet" />
+
+
+    <!-- Favicon  -->
+    <link
+      rel="icon"
+      href="https://cdn.glitch.com/59834b35-1469-482d-b53c-c1bd6dd74bdf%2Fimageedit_5_5198476197.png?v=1585644762325"
+    />
+  </head>
+  <body data-spy="scroll" data-target=".fixed-top">
+  
+<section id = "quiz">
+    
+
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
+      <a class="navbar-brand logo-text page-scroll" href="index.html"
+        >branch++</a
+      >
+
+      <!-- Mobile Menu Toggle Button -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarsExampleDefault"
+        aria-controls="navbarsExampleDefault"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-awesome fas fa-bars"></span>
+        <span class="navbar-toggler-awesome fas fa-times"></span>
+      </button>
+      <!-- end of mobile menu toggle button -->
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link page-scroll" href="https://branchapp.glitch.me/"
+              >HOME <span class="sr-only">(current)</span></a
+            >
+          </li>
+           <li class="nav-item">
+            <a class="nav-link page-scroll" href="https://branchapp.glitch.me/login.html">DASHBOARD</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link page-scroll" href="https://branchapp.glitch.me/quiz.html">QUIZ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link page-scroll" href="https://branchapp.glitch.me/index.html/#features">BRANCH++</a>
+          </li>
+
+          
+          <li class="nav-item">
+            <a class="nav-link page-scroll" href="https://branchapp.glitch.me/login.html">LOGIN</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- end of navbar -->
+
+     <!-- Video -->
+    <div id="preview" class="basic-1">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h2 style = "color: #2F343A;">Take Our Quiz</h2>
+            <br/>
+              <center><h5 id = "subtitle" style = "color: #2F343A;">
+                              Let us determine what project you should work on now!
+
+              </h5></center>
+            <br/>
+          </div>
+        </div>
+<!--         <head> -->
+    <title>Branch++ Quiz</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<!-- </head> -->
+
+<!-- <body>
+ -->
+    <div class="quiz-container">
+        <div class="title">Branch++ Quiz</div>
+        <div id="question" class="question"></div>
+        <label class="option">
+            <input type="radio" name="option" value="1" />
+            <span class="option1"></span>
+        </label>
+        <label class="option">
+            <input type="radio" name="option" value="2" />
+            <span class="option2"></span>
+        </label>
+        <label class="option">
+            <input type="radio" name="option" value="3" />
+            <span class="option3"></span>
+        </label>
+        <!-- Buttons -->
+        <div class="controls">
+            <button class="previous">Previous</button>
+            <button class="next">Next</button>
+        </div>
+    </div>
+
+    <div class="result">
+
+    </div>
+</body>
+  </div></section>     
+        
+        
+        <div class="row">
+          <div class="col-lg-12">
+            <!--- use this to change the quiz -->
+            <!-- Video Preview 
+            <div class="image-container">
+              <div class="video-wrapper">
+                <a
+                  class="popup-youtube"
+                  href="https://www.youtube.com/watch?v=fLCjQJCekTs"
+                  data-effect="fadeIn"
+                >
+                  <img
+                    class="img-fluid"
+                    src="images/video-frame.jpg"
+                    alt="alternative"
+                  />
+                  <span class="video-play-button">
+                    <span></span>
+                  </span>
+                  ---->
+                </a>
+              </div>
+              <!-- end of video-wrapper -->
+            </div>
+            <!-- end of image-container -->
+            <!-- end of video preview -->
+          </div>
+          <!-- end of col -->
+        </div>
+        <!-- end of row -->
+      </div>
+      <!-- end of container -->
+    </div>
+
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="footer-col">
+              <h4>About branch++</h4>
+              <p style = "color: #fff;">
+                We're passionate about connecting developers to the best ideas!
+              </p>
+            </div>
+          </div>
+          <!-- end of col -->
+          <div class="col-md-4">
+            <div class="footer-col middle">
+              <h4>Important Information</h4>
+              <ul class="list-unstyled li-space-lg">
+                <li class="media">
+                  <i class="fas fa-square"></i>
+                  <div class="media-body" style = "color: #fff;">
+                    Our business partner
+                    <a class="turquoise" href="https://www.srnd.org/">SRND</a>
+                  </div>
+                  <div class="media-body"  style = "color: #fff;">Built at Virtual CodeDay</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- end of col -->
+          <div class="col-md-4">
+            <div class="footer-col last">
+              <h4>Contact us</h4>
+              <p  style = "color: #fff;">Email us at branchapp@gmail.com to work on our platform.</p>
+            </div>
+          </div>
+          <!-- end of col -->
+        </div>
+        <!-- end of row -->
+      </div>
+      <!-- end of container -->
+    </div>
+    <!-- end of footer -->
+    <!-- end of footer -->
+
+    <!-- Copyright -->
+    <div class="copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <p class="p-small">
+              Copyright ©branch++ | Made With Love By Shivali, Salma, Monica, Tanvi &
+              Yamilett
+            </p>
+          </div>
+          <!-- end of col -->
+        </div>
+        <!-- enf of row -->
+      </div>
+      <!-- end of container -->
+    </div>
+    <!-- end of copyright -->
+    <!-- end of copyright -->
+    
+ 
+    <script>
+	var firebaseConfig = {
+		apiKey: "AIzaSyC6e9fNqemehlLugx0gczXhHJipvBhixgY",
+		authDomain: "branch-app-data.firebaseapp.com",
+		databaseURL: "https://branch-app-data.firebaseio.com",
+		projectId: "branch-app-data",
+		storageBucket: "branch-app-data.appspot.com",
+		messagingSenderId: "931391439837",
+		appId: "1:931391439837:web:c830d8fb3aaf3de5fd6c34",
+		measurementId: "G-5KX4417ZVB"
+	  };
+	  // Initialize Firebase
+	  firebase.initializeApp(firebaseConfig);
+	  
+	  var firestore = firebase.firestore();
+    var auth = firebase.auth();
+	  
+	  const docRef = firestore.doc("interests/me");
+	  const outputHeader = document.querySelector("#displayInterest");
+	  
+	  
+	  getRealtimeUpdates = function() {
+		docRef.onSnapshot(function (doc) {
+			if (doc && doc.exists) {
+				const myData = doc.data();
+				outputHeader.innerText = "My interest: " + myData.interest;
+			}
+		});
+	  }
+	  
+	  getRealtimeUpdates();
+	  </script>
+
+    <!-- Scripts -->
+    <script src="js/jquery.min.js"></script>
+    <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="js/popper.min.js"></script>
+    <!-- Popper tooltip library for Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Bootstrap framework -->
+    <script src="js/jquery.easing.min.js"></script>
+    <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="js/swiper.min.js"></script>
+    <!-- Swiper for image and text sliders -->
+    <script src="js/jquery.magnific-popup.js"></script>
+    <!-- Magnific Popup for lightboxes -->
+    <script src="js/morphext.min.js"></script>
+    <!-- Morphtext rotating text in the header -->
+    <script src="js/validator.min.js"></script>
+    <!-- Validator.js - Bootstrap plugin that validates forms -->
+    <script src="js/scripts.js"></script>
+    <!-- Custom scripts -->
+  </body>
+</html>

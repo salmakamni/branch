@@ -1,0 +1,4 @@
+body {
+ 	background: linear-gradient(to bottom right, rgba(72, 72, 212, 0), rgba(241, 104, 104, 0)), url("https://cdn.glitch.com/59834b35-1469-482d-b53c-c1bd6dd74bdf%2Fbgggg.jpg?v=1585811660239") center center no-repeat;
+	background-size: cover;
+}
