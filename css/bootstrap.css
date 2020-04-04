@@ -169,19 +169,13 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: 100;
   line-height: 1.7rem;
-  background: no-repeat linear-gradient(250deg, #ff934f, #db222a);
 }
 .quiz-container {
-  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
-  text-shadow: 1px 1px white;
-  padding: 3rem;
   text-shadow: 0 1px #00000010;
-  width: 60%;
-  margin: 5rem auto;
+  align-items: center;
+  margin-top: -150px;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(360deg, transparent, #ffffff);
-  min-height: 100vh;
 }
 .title {
   margin-top: 0;
@@ -194,14 +188,15 @@ body {
 }
 .question {
   margin: 2rem 0;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 .option {
+  border:  0.5px solid white;
   padding: 1rem;
-  color: #00000095;
+  color: #2F343A;
   background: rgba(255, 255, 255, 0.1);
   width: 80%;
-  border-radius: 5px;
+  border-radius: 25px;
   transition: all 0.3s;
 }
 .option:hover {
@@ -218,7 +213,7 @@ button {
   padding: 0.5rem 1.5rem;
   border: none;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
+  border-radius: 20px;
   font-weight: 300;
   color: white;
   outline: none;
@@ -226,17 +221,38 @@ button {
   transition: all 0.2s;
 }
 button.previous {
-  background: #c84630;
+  border-radius: 25px;
+  background-color: #9AB4FD; /* Green */
+  border:  2px solid black;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 button.next {
-  background: #3c91e6;
+  border-radius: 25px;
+  background-color: #FFA38F; /* Green */
+  border:  2px solid black;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 button.restart {
-  background: #0cf574;
-  color: #00000050;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  transition: all 0.4s;
+  border-radius: 25px;
+  background-color: #FFA38F; /* Green */
+  border:  2px solid black;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-bottom: 2rem;
 }
 button.restart:hover {
   color: #00000098;
@@ -255,13 +271,13 @@ button:focus {
   align-items: center;
   text-align: center;
   font-size: 2.5rem;
-  min-height: 100vh;
 }
 .final-score {
-  color: #00000099;
+  color: #2F343A;
+  font: 700 3.25rem/3.75rem "Montserrat", sans-serif;
 }
 .summary {
-  font-size: 1rem;
+  font: 400 0.875rem/1.375rem "Open Sans", sans-serif;
   text-shadow: 1px 1px #ffffff50;
   color: #00000099;
   background: rgba(255, 255, 255, 0.4);
@@ -269,8 +285,9 @@ button:focus {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0 2rem;
+  padding: 2rem;
   margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 .summary h1 {
   align-self: center;

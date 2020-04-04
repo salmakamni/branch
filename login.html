@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase.js"></script>
-	  <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-firestore.js"></script>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -36,7 +36,7 @@
     <link href="css/fontawesome-all.css" rel="stylesheet" />
     <link href="css/swiper.css" rel="stylesheet" />
     <link href="css/magnific-popup.css" rel="stylesheet" />
-        <link href="css/style.css" rel="stylesheet" />
+  
     <link href="login.css" rel="stylesheet" />
 
     <!-- Favicon  -->
@@ -56,8 +56,6 @@
     </div>
     <!-- end of preloader -->
 
-    
-    
     <div class="container" id="container">
       <div class="form-container sign-up-container">
         <form>
@@ -67,29 +65,34 @@
         </form>
       </div>
       <div class="form-container sign-in-container">
-        <form action = "studentemail()">
+        <form>
           <b><h1>Sign in</h1></b>
-          <span>or use your account</span>
+          <span>or create a new account</span>
           <input type="username" placeholder="Email" id="email_field" />
-          <input type="password" placeholder="Password" id="passoword_field" />
+          <input type="password" placeholder="Password" id="password_field" />
           <a href="#">Forgot your password?</a>
-          <input type = "submit" label = "signin" class="nont" id="signIn"/>
+          <button class = "nont" id="sign-in" style="border: 2px solid black; color: black">
+            Sign In
+          </button>
         </form>
       </div>
+
       <div class="overlay-container">
         <div class="overlay">
-          <div class="overlay-panel overlay-left">
-            <b><h1>Welcome Back!</h1></b>
-            <p>
-              To keep connected with us please login with your personal info
-            </p>
-            <button class="ghost" id="signIn2" onclick = "studentemail()">Sign In</button>
-          </div>
           <div class="overlay-panel overlay-right">
-            <h1>Join branch++</h1>
-            <p>Enter your personal details and start building with us</p>
-            <input type="username" placeholder="Email" id="email_field_signUp" />
-            <input type="password" placeholder="Password" id="passoword_field_signUp" />
+            <h1>Sign up</h1>
+            <span>get started today!</span>
+            <input
+              type="username"
+              placeholder="Email"
+              id="email_field_signUp"
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              id="password_field_signUp"
+            />
+            <a href="#" style="color: #2F343A">placeholder</a>
             <button class="ghost" id="signUp">Sign Up</button>
           </div>
         </div>
@@ -97,60 +100,75 @@
     </div>
 
     <script>
-var firebaseConfig = {
-  apiKey: "AIzaSyC6e9fNqemehlLugx0gczXhHJipvBhixgY",
-  authDomain: "branch-app-data.firebaseapp.com",
-  databaseURL: "https://branch-app-data.firebaseio.com",
-  projectId: "branch-app-data",
-  storageBucket: "branch-app-data.appspot.com",
-  messagingSenderId: "931391439837",
-  appId: "1:931391439837:web:c830d8fb3aaf3de5fd6c34",
-  measurementId: "G-5KX4417ZVB"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+      var firebaseConfig = {
+        apiKey: "AIzaSyC6e9fNqemehlLugx0gczXhHJipvBhixgY",
+        authDomain: "branch-app-data.firebaseapp.com",
+        databaseURL: "https://branch-app-data.firebaseio.com",
+        projectId: "branch-app-data",
+        storageBucket: "branch-app-data.appspot.com",
+        messagingSenderId: "931391439837",
+        appId: "1:931391439837:web:c830d8fb3aaf3de5fd6c34",
+        measurementId: "G-5KX4417ZVB"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
 
-  const signInButton = document.getElementById("signIn");
-  const txtEmail = document.getElementById("email_field");
-  const txtPassword = document.getElementById("password_field");
-      
-  const signUpButton = document.getElementById("signUp");
-  const txtEmailSignUp = document.getElementById("email_field_signUp");
-  const txtPasswordSignUp = document.getElementById("password_field_signUp");
-      
-  var auth = firebase.auth();
-    console.log("accessed authentication stuff");
-      
+      const signInButton = document.getElementById("sign-in");
+      const txtEmail = document.getElementById("email_field");
+      const txtPassword = document.getElementById("password_field");
+
+      const signUpButton = document.getElementById("signUp");
+      const txtEmailSignUp = document.getElementById("email_field_signUp");
+      const txtPasswordSignUp = document.getElementById(
+        "password_field_signUp"
+      );
+
+      var auth = firebase.auth();
+      console.log("accessed authentication stuff from login");
+
       signInButton.addEventListener("click", function() {
         const email = txtEmail.value;
         const password = txtPassword.value;
-        
+        console.log("in sign in button");
         // sign in
         auth.signInWithEmailAndPassword(email, password)
-        .then(function() {
-          window.location.href = "profilePage.html";
-        })
-        .catch(function(error) {
-          console.log("Got an error: ", error);
-        });
-      })
+          .then(function () {
+            console.log("success!")
+            window.location.href = "dashboard.html";
+          })
+          .catch(function(error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+
+            window.alert("Error : " + errorMessage);
+          });
+      });
       
+      auth.onAuthStateChanged((user) => {
+        if(user) {
+          window.location.href = 'dashboard.html'; //After successful login, user will be redirected to home.html
+        }
+      });
+
       signUpButton.addEventListener("click", function() {
         const emailSign = txtEmailSignUp.value;
         const passwordSign = txtPasswordSignUp.value;
-        
+        console.log("in sign up button");
         // sign in
-        auth.createUserWithEmailAndPassword(emailSign, passwordSign)
-        .then(function() {
-          window.location.href = "profilePage.html";
-        })
-        .catch(function(error) {
-          console.log("Got an error: ", error);
-        });
-      })
-      
+        auth
+          .createUserWithEmailAndPassword(emailSign, passwordSign)
+          .then(function() {
+            console.log("sign up completed");
+            window.alert("success! try logging in now!");
+            /*window.location.href = "dashboard.html";*/
+          })
+          .catch(function(error) {
+            console.log("Got an error: ", error);
+            window.alert("Uh oh!" + " " + error);
+          });
+      });
     </script>
-    
+
     <!--<script src="/login.js"></script>-->
   </body>
 </html>
