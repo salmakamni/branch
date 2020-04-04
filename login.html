@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-firestore.js"></script>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="Branch++ connects developers from all over the world"
+    />
+    <meta name="author" content="Inovatik" />
+    <meta property="og:site_name" content="Branch++" />
+    <meta property="og:site" content="https://branchapp.glitch.me/" />
+    <meta property="og:title" content="Branch++" />
+    <meta
+      property="og:description"
+      content="Connecting developers from all over the world"
+    />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="article" />
+    <title>Branch++</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i"
+      rel="stylesheet"
+    />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/fontawesome-all.css" rel="stylesheet" />
+    <link href="css/swiper.css" rel="stylesheet" />
+    <link href="css/magnific-popup.css" rel="stylesheet" />
+  
+    <link href="login.css" rel="stylesheet" />
+
+    <!-- Favicon  -->
+    <link
+      rel="icon"
+      href="https://cdn.glitch.com/59834b35-1469-482d-b53c-c1bd6dd74bdf%2Fimageedit_5_5198476197.png?v=1585644762325"
+    />
+  </head>
+  <body data-spy="scroll" data-target=".fixed-top">
+    <!-- Preloader -->
+    <div class="spinner-wrapper">
+      <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+      </div>
+    </div>
+    <!-- end of preloader -->
+
+    <div class="container" id="container">
+      <div class="form-container sign-up-container">
+        <form>
+          <h1>Create Account</h1>
+          <p>Click the button to register as a developer</p>
+          <button id="yes" class="nont">Sign Up</button>
+        </form>
+      </div>
+      <div class="form-container sign-in-container">
+        <form>
+          <b><h1>Sign in</h1></b>
+          <span>or create a new account</span>
+          <input type="username" placeholder="Email" id="email_field" />
+          <input type="password" placeholder="Password" id="password_field" />
+          <a href="#">Forgot your password?</a>
+          <button class = "nont" id="sign-in" style="border: 2px solid black; color: black">
+            Sign In
+          </button>
+        </form>
+      </div>
+
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-right">
+            <h1>Sign up</h1>
+            <span>get started today!</span>
+            <input
+              type="username"
+              placeholder="Email"
+              id="email_field_signUp"
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              id="password_field_signUp"
+            />
+            <a href="#" style="color: #2F343A">placeholder</a>
+            <button class="ghost" id="signUp">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyC6e9fNqemehlLugx0gczXhHJipvBhixgY",
+        authDomain: "branch-app-data.firebaseapp.com",
+        databaseURL: "https://branch-app-data.firebaseio.com",
+        projectId: "branch-app-data",
+        storageBucket: "branch-app-data.appspot.com",
+        messagingSenderId: "931391439837",
+        appId: "1:931391439837:web:c830d8fb3aaf3de5fd6c34",
+        measurementId: "G-5KX4417ZVB"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+      const signInButton = document.getElementById("sign-in");
+      const txtEmail = document.getElementById("email_field");
+      const txtPassword = document.getElementById("password_field");
+
+      const signUpButton = document.getElementById("signUp");
+      const txtEmailSignUp = document.getElementById("email_field_signUp");
+      const txtPasswordSignUp = document.getElementById(
+        "password_field_signUp"
+      );
+
+      var auth = firebase.auth();
+      console.log("accessed authentication stuff from login");
+
+      signInButton.addEventListener("click", function() {
+        const email = txtEmail.value;
+        const password = txtPassword.value;
+        console.log("in sign in button");
+        // sign in
+        auth.signInWithEmailAndPassword(email, password)
+          .then(function () {
+            console.log("success!")
+            window.location.href = "dashboard.html";
+          })
+          .catch(function(error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+
+            window.alert("Error : " + errorMessage);
+          });
+      });
+      
+      auth.onAuthStateChanged((user) => {
+        if(user) {
+          window.location.href = 'dashboard.html'; //After successful login, user will be redirected to home.html
+        }
+      });
+
+      signUpButton.addEventListener("click", function() {
+        const emailSign = txtEmailSignUp.value;
+        const passwordSign = txtPasswordSignUp.value;
+        console.log("in sign up button");
+        // sign in
+        auth
+          .createUserWithEmailAndPassword(emailSign, passwordSign)
+          .then(function() {
+            console.log("sign up completed");
+            window.alert("success! try logging in now!");
+            /*window.location.href = "dashboard.html";*/
+          })
+          .catch(function(error) {
+            console.log("Got an error: ", error);
+            window.alert("Uh oh!" + " " + error);
+          });
+      });
+    </script>
+
+    <!--<script src="/login.js"></script>-->
+  </body>
+</html>

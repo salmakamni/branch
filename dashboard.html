@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase.js"></script>
+	  <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-firestore.js"></script>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="Branch++ connects developers from all over the world"
+    />
+    <meta name="author" content="Inovatik" />
+    <meta property="og:site_name" content="Branch++" />
+    <meta property="og:site" content="https://branchapp.glitch.me/" />
+    <meta property="og:title" content="Branch++" />
+    <meta
+      property="og:description"
+      content="Connecting developers from all over the world"
+    />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="article" />
+    <title>branch++</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i"
+      rel="stylesheet"
+    />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/fontawesome-all.css" rel="stylesheet" />
+    <link href="css/swiper.css" rel="stylesheet" />
+    <link href="css/magnific-popup.css" rel="stylesheet" />
+    <link href="special.css" rel="stylesheet" />
+
+    <!-- Favicon  -->
+    <link
+      rel="icon"
+      href="https://cdn.glitch.com/59834b35-1469-482d-b53c-c1bd6dd74bdf%2Fimageedit_5_5198476197.png?v=1585644762325"
+    />
+    <script>
+      document.getElementById('slide').style.display='none';
+    </script>
+  </head>
+  <body data-spy="scroll" data-target=".fixed-top">
+    
+    <!-- Preloader -->
+    <div class="spinner-wrapper">
+      <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+      </div>
+    </div>
+    <!-- end of preloader -->
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
+      <a class="navbar-brand logo-text page-scroll" href="index.html"
+        >branch++</a
+      >
+
+      <!-- Mobile Menu Toggle Button -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarsExampleDefault"
+        aria-controls="navbarsExampleDefault"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-awesome fas fa-bars"></span>
+        <span class="navbar-toggler-awesome fas fa-times"></span>
+      </button>
+      <!-- end of mobile menu toggle button -->
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link page-scroll" href="#header"
+              >HOME <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link page-scroll" href="#preview">QUIZ</a>
+          </li>
+        <li class="nav-item">
+           <a class="nav-link page-scroll" href="https://branchapp.glitch.me/connect.html">CONNECT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link page-scroll" onclick = "signOut()" href="/login.html">SIGN OUT</a> 
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- end of navbar -->
+    
+    
+    <!-- Header -->
+    <header id="header" class="header">
+      <div class="header-content">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="text-container">
+                <h1 style = "color: white;">
+                  WELCOME BACK,<br />
+                  <span style = "color: #A47A7C;">SALMA</span>
+                </h1>
+                <p class="p-large">
+                  Get started by taking our quiz, exploring possible project ideas, and meeting other like-minded individuals!
+                </p>
+
+              </div>
+            </div>
+            <!-- end of col -->
+            
+              <!-- end of image-container -->
+            </div>
+            <!-- end of col -->
+          </div>
+          <!-- end of row -->
+        </div>
+        <!-- end of container -->
+    
+      <!-- end of header-content -->
+    </header>
+    <!-- end of header -->
+    <!-- end of header -->
+    
+    <!-- Video -->
+    <div id="preview" class="basic-1" style = "background: linear-gradient(to right, rgba(255,0,0,0.25), rgba(189,253,242,1));margin: 0; background-size: cover; margin-top: -22px">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12" id = "quizsection">
+            <h1 style = "color: #2F343A; text-align: center; margin-bottom: 100px">Take Our Quiz</h1>
+          </div>
+          <!-- end of col -->
+        </div>
+        <!-- end of row -->
+
+
+  <!--dis is where the quiz and scroll section previously were -->
+    <div class="quiz-container">
+        <div id="question" class="question"></div>
+        <label class="option">
+            <input type="radio" name="option" value="1" />
+            <span class="option1"></span>
+        </label>
+        <label class="option">
+            <input type="radio" name="option" value="2" />
+            <span class="option2"></span>
+        </label>
+        <label class="option">
+            <input type="radio" name="option" value="3" />
+            <span class="option3"></span>
+        </label>
+        <div class="controls">
+            <button class="previous">Previous</button>
+            <button class="next">Next</button>
+        </div>
+    </div>
+
+    <div class="result">
+
+    </div>
+      </div>
+    </div>
+        
+    <!--slider-->
+    <div class="slider-1" id = "slide" style = "background-color: white;display:none">
+      <div class="container">
+        <h1 style = "color: #A47A7C;text-align: center; margin-top: -50px; margin-bottom: 50px; display: inline-block; margin-left: 32%">Salma</h1>
+        <h1 style = "color: #2F343A; text-align: center; margin-top: -50px; margin-bottom: 50px; display: inline-block">'s Matches</h1>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="slider-container">
+              <div class="swiper-container card-slider">
+                <div class="swiper-wrapper">
+               
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <img
+                        class="card-image"
+                        src="https://cdn.glitch.com/59834b35-1469-482d-b53c-c1bd6dd74bdf%2Ftmobileheadshot1%20copy.jpeg?v=1585537165146"
+                        alt="alternative"
+                      />
+                      <div class="card-body">
+                         <p class="testimonial-author">
+                          Salma Kamni - Developer
+                        </p>
+                        <p class="testimonial-text">
+                          I'm interested in studying CS + linguistics. Reach out to me if you have any project ideas, I'd love to hear them out!
+                        </p>
+                          <p>
+                          <a style = "color: gray; padding-right: 15px" href="mailto:branchapp@gmail.com to ?" target="_blank"><i class="fas fa-envelope"></i></a> <!--generic email-->
+                          <a style = "color: gray; padding-right: 15px" target="_blank" href="https://www.linkedin.com/"><i class= "fab fa-linkedin"></i></a> <!--redirects to GitHub-->
+                          <a style = "color: gray; padding-right: 15px" target="_blank" href="https://github.com/"><i class = "fab fa-github"></i></a>  <!--redirects to GitHub-->
+                        </p> 
+                      
+                    
+                      </div>
+                    </div>
+                  </div>
+                
+                  <!-- end of swiper-slide -->
+                  <!-- end of slide -->
+
+               
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <img
+                        class="card-image"
+                        src="https://cdn.glitch.com/59834b35-1469-482d-b53c-c1bd6dd74bdf%2FshivaliHeadshot.jpg?v=1585537160574"
+                        alt="alternative"
+                      />
+                      <div class="card-body">
+                        <p class="testimonial-author">
+                          Shivali Gulati - Developer
+                        </p>
+                        <p class="testimonial-text">
+                          I'm super interested in tech + business and their overlap, but I also really love design and 3D printing!
+                        </p>
+                        <a style = "color: gray; padding-right: 15px" href="mailto:branchapp@gmail.com to ?" target="_blank"><i class="fas fa-envelope"></i></a> <!--generic email-->
+                        <a style = "color: gray; padding-right: 15px" target="_blank" href="https://www.linkedin.com/"><i class= "fab fa-linkedin"></i></a> <!--redirects to GitHub-->
+                        <a style = "color: gray; padding-right: 15px" target="_blank" href="https://github.com/"><i class = "fab fa-github"></i></a>  <!--redirects to GitHub-->
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end of swiper-slide -->
+                  <!-- end of slide -->
+
+              
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <img
+                        class="card-image"
+                        src="https://cdn.glitch.com/59834b35-1469-482d-b53c-c1bd6dd74bdf%2Fpfp2.jpg?v=1585599958733"
+                        alt="alternative"
+                      />
+                      <div class="card-body">
+                        <p class="testimonial-author">
+                          Yamilett Estrada-Reyes - Developer
+                        </p>
+                        <p class="testimonial-text">
+                          I love working on projects with a focus on social good! Contact me if you're in need of a front-end developer! :)
+                        </p>
+                         <p>
+                          <a style = "color: gray; padding-right: 15px" href="mailto:yestrada.re@gmail.com?" target="_blank"><i class="fas fa-envelope"></i></a>
+                          <a style = "color: gray; padding-right: 15px" target="_blank" href="https://www.linkedin.com/in/yamilett-estrada-reyes-88b953163/"><i class= "fab fa-linkedin"></i></a>
+                          <a style = "color: gray; padding-right: 15px" target="_blank" href="https://github.com/yyestrada-re"><i class = "fab fa-github"></i></a>  
+                        </p> 
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end of swiper-slide -->
+                  <!-- end of slide -->
+
+               
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <img
+                        class="card-image"
+                        src="https://cdn.glitch.com/59834b35-1469-482d-b53c-c1bd6dd74bdf%2FprofilePicBranch%2B%2B.png?v=1585795419908"
+                        alt="alternative"
+                      />
+                      <div class="card-body">
+                        <p class="testimonial-author">Tanvi Ganapathy- Developer</p>
+                        <p class="testimonial-text">
+                          Hi! I'm interested in studying AI. I have experience working with web development and multi-platform app development with Flutter! Let's chat!
+                        </p>
+                        <p>
+                          <a style = "color: gray; padding-right: 15px" href="mailto:branchapp@gmail.com to ?" target="_blank"><i class="fas fa-envelope"></i></a> <!--generic email-->
+                          <a style = "color: gray; padding-right: 15px" target="_blank" href="https://www.linkedin.com/"><i class= "fab fa-linkedin"></i></a> <!--redirects to GitHub-->
+                          <a style = "color: gray; padding-right: 15px" target="_blank" href="https://github.com/"><i class = "fab fa-github"></i></a>  <!--redirects to GitHub-->
+                        </p> 
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end of swiper-slide -->
+                  <!-- end of slide -->
+              
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <img
+                        class="card-image"
+                        src="https://cdn.glitch.com/59834b35-1469-482d-b53c-c1bd6dd74bdf%2FScreen%20Shot%202020-04-01%20at%209.58.18%20PM.png?v=1585796308567"
+                        alt="alternative"
+                      />
+                      <div class="card-body">
+                         <p class="testimonial-author">Monica Para - Developer</p>
+                        <p class="testimonial-text">
+                          I love to meet new people and I have experience with Java, HTML & CSS, JS, and much more!
+                        </p>
+                         <p>
+                          <a style = "color: gray; padding-right: 15px" href="mailto:branchapp@gmail.com to ?" target="_blank"><i class="fas fa-envelope"></i></a> <!--generic email-->
+                          <a style = "color: gray; padding-right: 15px" target="_blank" href="https://www.linkedin.com/"><i class= "fab fa-linkedin"></i></a> <!--redirects to GitHub-->
+                          <a style = "color: gray; padding-right: 15px" target="_blank" href="https://github.com/"><i class = "fab fa-github"></i></a>  <!--redirects to GitHub-->
+                        </p> 
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end of swiper-slide -->
+                  <!-- end of slide -->
+
+                  <!-- Slide -->
+                
+                  <!-- end of swiper-slide -->
+                  <!-- end of slide -->
+
+                  <!-- Slide -->
+             
+                  <!-- end of swiper-slide -->
+               
+                </div>
+                <!-- end of swiper-wrapper -->
+
+            
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+          -
+              </div>
+         
+            </div>
+            <!-- end of slider-container -->
+          </div>
+          <!-- end of col -->
+        </div>
+        <!-- end of row -->
+      </div>
+      <!-- end of container -->
+    </div>
+    <!-- end of slider-1 -->
+    <!-- end of testimonials -->
+  
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="footer-col">
+              <h4>About branch++</h4>
+              <p style = "color: #fff;">
+                We're a collaborative platform on a mission to connect passionate, like-minded
+                individuals with projects they might be interested in! We're fueling innovation, one idea at a time.
+              </p>
+            </div>
+          </div>
+          <!-- end of col -->
+          <div class="col-md-4">
+            <div class="footer-col middle">
+              <h4>Important Information</h4>
+              <ul class="list-unstyled li-space-lg">
+                <li class="media">
+                  <i class="fas fa-square"></i>
+                  <div class="media-body"  style = "color: #fff;">Built at Virtual CodeDay 2020</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- end of col -->
+          <div class="col-md-4">
+            <div class="footer-col last">
+              <h4>Contact us</h4>
+              <p style = "color: #fff; display: inline-block">Email us at</p>
+                <p style = "color: #A47A7C; display: inline">branchapp@gmail.com </p>
+          </div>
+          <!-- end of col -->
+        </div>
+        <!-- end of row -->
+      </div>
+      <!-- end of container -->
+    </div>
+    <!-- end of footer -->
+    <!-- end of footer -->
+    </div>
+    
+    <!-- Copyright -->
+    <div class="copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <p class="p-small">
+              made with 💞 by Shivali, Salma, Monica, Tanvi & Yamilett
+            </p>
+          </div>
+          <!-- end of col -->
+        </div>
+        <!-- enf of row -->
+      </div>
+      <!-- end of container -->
+    </div>
+    <!-- end of copyright -->
+    <!-- end of copyright -->
+    
+    <script>
+	  var firebaseConfig = {
+		apiKey: "AIzaSyC6e9fNqemehlLugx0gczXhHJipvBhixgY",
+		authDomain: "branch-app-data.firebaseapp.com",
+		databaseURL: "https://branch-app-data.firebaseio.com",
+		projectId: "branch-app-data",
+		storageBucket: "branch-app-data.appspot.com",
+		messagingSenderId: "931391439837",
+		appId: "1:931391439837:web:c830d8fb3aaf3de5fd6c34",
+		measurementId: "G-5KX4417ZVB"
+	  };
+	  // Initialize Firebase
+	  firebase.initializeApp(firebaseConfig);
+	  
+	  var firestore = firebase.firestore();
+    var auth = firebase.auth();
+    firebase.auth().signOut();
+	  
+	  const docRef = firestore.doc("interests/me");
+	  const outputHeader = document.querySelector("#displayInterest");
+	  
+	  
+	  getRealtimeUpdates = function() {
+		docRef.onSnapshot(function (doc) {
+			if (doc && doc.exists) {
+				const myData = doc.data();
+				outputHeader.innerText = "My interest: " + myData.interest;
+			}
+		});
+	  }
+	  
+	  getRealtimeUpdates();
+	  </script>
+
+    <!-- Scripts -->
+    <script src="js/jquery.min.js"></script>
+    <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="js/popper.min.js"></script>
+    <!-- Popper tooltip library for Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Bootstrap framework -->
+    <script src="js/jquery.easing.min.js"></script>
+    <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="js/swiper.min.js"></script>
+    <!-- Swiper for image and text sliders -->
+    <script src="js/jquery.magnific-popup.js"></script>
+    <!-- Magnific Popup for lightboxes -->
+    <script src="js/morphext.min.js"></script>
+    <!-- Morphtext rotating text in the header -->
+    <script src="js/validator.min.js"></script>
+    <!-- Validator.js - Bootstrap plugin that validates forms -->
+    <script src="quiz.js"></script>
+    <script src="js/scripts.js"></script>
+    <!-- Custom scripts -->
+  </body>
+</html>

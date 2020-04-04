@@ -152,6 +152,148 @@ sup {
   top: -.5em;
 }
 
+/* START OF PERSONALITY
+ QUIz IS RIGHT HERE */
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  line-height: 1.7rem;
+}
+.quiz-container {
+  text-shadow: 0 1px #00000010;
+  align-items: center;
+  margin-top: -150px;
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  margin-top: 0;
+  margin-bottom: 3rem;
+  color: #00000050;
+  font-weight: 400;
+  font-size: 2.5rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+.question {
+  margin: 2rem 0;
+  font-size: 1rem;
+}
+.option {
+  border:  0.5px solid white;
+  padding: 1rem;
+  color: #2F343A;
+  background: rgba(255, 255, 255, 0.1);
+  width: 80%;
+  border-radius: 25px;
+  transition: all 0.3s;
+}
+.option:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+.option input:checked .option {
+  background: #08038c;
+  color: #000;
+}
+.controls > * {
+  margin: 1rem;
+}
+button {
+  padding: 0.5rem 1.5rem;
+  border: none;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  font-weight: 300;
+  color: white;
+  outline: none;
+  transform: scale(0.98);
+  transition: all 0.2s;
+}
+button.previous {
+  border-radius: 25px;
+  background-color: #9AB4FD; /* Green */
+  border:  2px solid black;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+button.next {
+  border-radius: 25px;
+  background-color: #FFA38F; /* Green */
+  border:  2px solid black;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+button.restart {
+  border-radius: 25px;
+  background-color: #FFA38F; /* Green */
+  border:  2px solid black;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-bottom: 2rem;
+}
+button.restart:hover {
+  color: #00000098;
+}
+button:hover,
+button:focus {
+  transform: scale(1);
+  font-weight: 500;
+  box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+.result {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 2.5rem;
+}
+.final-score {
+  color: #2F343A;
+  font: 700 3.25rem/3.75rem "Montserrat", sans-serif;
+}
+.summary {
+  font: 400 0.875rem/1.375rem "Open Sans", sans-serif;
+  text-shadow: 1px 1px #ffffff50;
+  color: #00000099;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+.summary h1 {
+  align-self: center;
+}
+/* end of personality quiz css */
+
 a {
   color: #007bff;
   text-decoration: none;
@@ -4205,8 +4347,8 @@ input[type="button"].btn-block {
 
 .navbar-text {
   display: inline-block;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .navbar-collapse {
